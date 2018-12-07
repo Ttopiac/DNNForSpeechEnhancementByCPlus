@@ -1,0 +1,79 @@
+# Project: FFNN
+# Makefile created by Dev-C++ 5.9.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Matrix.o IntMatrix.o LearningDataSet.o Tanh.o Layer.o FeedForward.o Logistic.o RBM.o CmpRand.o Linear.o TxtDataSet.o SizeDataSet.o DataSet.o LayerList.o HalfTxtDataSet.o MatrixDataSet.o MatrixList.o
+LINKOBJ  = main.o Matrix.o IntMatrix.o LearningDataSet.o Tanh.o Layer.o FeedForward.o Logistic.o RBM.o CmpRand.o Linear.o TxtDataSet.o SizeDataSet.o DataSet.o LayerList.o HalfTxtDataSet.o MatrixDataSet.o MatrixList.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = FFNN.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Matrix.o: Matrix.cpp
+	$(CPP) -c Matrix.cpp -o Matrix.o $(CXXFLAGS)
+
+IntMatrix.o: IntMatrix.cpp
+	$(CPP) -c IntMatrix.cpp -o IntMatrix.o $(CXXFLAGS)
+
+LearningDataSet.o: LearningDataSet.cpp
+	$(CPP) -c LearningDataSet.cpp -o LearningDataSet.o $(CXXFLAGS)
+
+Tanh.o: Tanh.cpp
+	$(CPP) -c Tanh.cpp -o Tanh.o $(CXXFLAGS)
+
+Layer.o: Layer.cpp
+	$(CPP) -c Layer.cpp -o Layer.o $(CXXFLAGS)
+
+FeedForward.o: FeedForward.cpp
+	$(CPP) -c FeedForward.cpp -o FeedForward.o $(CXXFLAGS)
+
+Logistic.o: Logistic.cpp
+	$(CPP) -c Logistic.cpp -o Logistic.o $(CXXFLAGS)
+
+RBM.o: RBM.cpp
+	$(CPP) -c RBM.cpp -o RBM.o $(CXXFLAGS)
+
+CmpRand.o: CmpRand.cpp
+	$(CPP) -c CmpRand.cpp -o CmpRand.o $(CXXFLAGS)
+
+Linear.o: Linear.cpp
+	$(CPP) -c Linear.cpp -o Linear.o $(CXXFLAGS)
+
+TxtDataSet.o: TxtDataSet.cpp
+	$(CPP) -c TxtDataSet.cpp -o TxtDataSet.o $(CXXFLAGS)
+
+SizeDataSet.o: SizeDataSet.cpp
+	$(CPP) -c SizeDataSet.cpp -o SizeDataSet.o $(CXXFLAGS)
+
+DataSet.o: DataSet.cpp
+	$(CPP) -c DataSet.cpp -o DataSet.o $(CXXFLAGS)
+
+LayerList.o: LayerList.cpp
+	$(CPP) -c LayerList.cpp -o LayerList.o $(CXXFLAGS)
+
+HalfTxtDataSet.o: HalfTxtDataSet.cpp
+	$(CPP) -c HalfTxtDataSet.cpp -o HalfTxtDataSet.o $(CXXFLAGS)
+
+MatrixDataSet.o: MatrixDataSet.cpp
+	$(CPP) -c MatrixDataSet.cpp -o MatrixDataSet.o $(CXXFLAGS)
+
+MatrixList.o: MatrixList.cpp
+	$(CPP) -c MatrixList.cpp -o MatrixList.o $(CXXFLAGS)
